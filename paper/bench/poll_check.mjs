@@ -1,0 +1,16 @@
+import { chromium } from "./node/node_modules/playwright-core/index.mjs";
+const b = await chromium.launch({ channel: "chrome", headless: true });
+const p = await (await b.newContext()).newPage();
+let n = 0, t0 = Date.now(); const stamps = [];
+p.on("request", r => { if (r.url().includes("/v1/onboarding")) { n++; stamps.push(Date.now() - t0); } });
+await p.goto("http://localhost:5181/#/dashboard", { waitUntil: "load" }); await p.waitForTimeout(1500);
+const idle = n; 
+await p.locator("text=Start guide").click(); await p.waitForTimeout(1000);
+await p.locator("aside >> text=Settings").click(); await p.waitForTimeout(600);
+await p.locator('[data-testid="members-invite"]').click(); await p.waitForTimeout(600);
+await p.locator('[data-testid="invite-email"]').fill("a@b.co"); await p.waitForTimeout(400);
+await p.locator('[data-testid="send-invite"]').click();
+const before = n;
+await p.waitForTimeout(12000);
+console.log(JSON.stringify({ idleCalls: idle, afterCompletionCalls12s: n - before, perSec: ((n - before) / 12).toFixed(1) }));
+await b.close();

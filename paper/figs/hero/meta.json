@@ -1,0 +1,38 @@
+[
+ {
+  "name": "demo-members",
+  "target": "invite",
+  "seed": 155,
+  "outcomes": {
+   "css": "none",
+   "text": "wrong",
+   "rolename": "wrong",
+   "ours": "correct"
+  },
+  "oursScore": 0.8126182375672042
+ },
+ {
+  "name": "shadcn-dashboard",
+  "target": "open menu",
+  "seed": 62,
+  "outcomes": {
+   "css": "none",
+   "text": "wrong",
+   "rolename": "wrong",
+   "ours": "correct"
+  },
+  "oursScore": 0.6301369863013698
+ },
+ {
+  "name": "hackernews",
+  "target": "hide",
+  "seed": 62,
+  "outcomes": {
+   "css": "none",
+   "text": "wrong",
+   "rolename": "wrong",
+   "ours": "correct"
+  },
+  "oursScore": 0.7549082025211034
+ }
+]

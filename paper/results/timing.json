@@ -1,0 +1,139 @@
+{
+ "pages": {
+  "adminlte": {
+   "extractMs": 13.400000005960464,
+   "scoreMs": 1.3999999910593033,
+   "nInteractive": 152,
+   "nKept": 152
+  },
+  "bootstrap-dashboard": {
+   "extractMs": 1.4000000059604645,
+   "scoreMs": 0.09999999403953552,
+   "nInteractive": 25,
+   "nKept": 25
+  },
+  "bootstrap-forms": {
+   "extractMs": 8.099999994039536,
+   "scoreMs": 1.5,
+   "nInteractive": 201,
+   "nKept": 201
+  },
+  "demo-dashboard": {
+   "extractMs": 0.5999999940395355,
+   "scoreMs": 0,
+   "nInteractive": 14,
+   "nKept": 14
+  },
+  "demo-members": {
+   "extractMs": 0.6000000089406967,
+   "scoreMs": 0,
+   "nInteractive": 14,
+   "nKept": 14
+  },
+  "demo-modal": {
+   "extractMs": 0.5999999940395355,
+   "scoreMs": 0,
+   "nInteractive": 17,
+   "nKept": 17
+  },
+  "github-playwright": {
+   "extractMs": 59.900000005960464,
+   "scoreMs": 32.29999999701977,
+   "nInteractive": 402,
+   "nKept": 250
+  },
+  "hackernews": {
+   "extractMs": 5.799999997019768,
+   "scoreMs": 0.20000000298023224,
+   "nInteractive": 231,
+   "nKept": 231
+  },
+  "mdn-button": {
+   "extractMs": 30.799999997019768,
+   "scoreMs": 4,
+   "nInteractive": 556,
+   "nKept": 250
+  },
+  "python-docs": {
+   "extractMs": 4,
+   "scoreMs": 0.5,
+   "nInteractive": 113,
+   "nKept": 113
+  },
+  "react-dev": {
+   "extractMs": 20.299999997019768,
+   "scoreMs": 10.199999988079071,
+   "nInteractive": 135,
+   "nKept": 135
+  },
+  "shadcn-dashboard": {
+   "extractMs": 8.099999994039536,
+   "scoreMs": 1.5999999940395355,
+   "nInteractive": 130,
+   "nKept": 130
+  },
+  "todomvc": {
+   "extractMs": 0.30000001192092896,
+   "scoreMs": 0.09999999403953552,
+   "nInteractive": 12,
+   "nKept": 12
+  },
+  "wikipedia-main": {
+   "extractMs": 88.5,
+   "scoreMs": 30.5,
+   "nInteractive": 673,
+   "nKept": 250
+  }
+ },
+ "scale": [
+  {
+   "N": 50,
+   "kept": 50,
+   "extractMs": 1.5,
+   "scoreMs": 0.09999999403953552,
+   "scoreAllMs": 0.09999999403953552
+  },
+  {
+   "N": 100,
+   "kept": 100,
+   "extractMs": 3,
+   "scoreMs": 0.09999999403953552,
+   "scoreAllMs": 0
+  },
+  {
+   "N": 250,
+   "kept": 250,
+   "extractMs": 16.200000002980232,
+   "scoreMs": 0.4000000059604645,
+   "scoreAllMs": 0.5
+  },
+  {
+   "N": 500,
+   "kept": 250,
+   "extractMs": 43.20000000298023,
+   "scoreMs": 0.20000000298023224,
+   "scoreAllMs": 0.4000000059604645
+  },
+  {
+   "N": 1000,
+   "kept": 250,
+   "extractMs": 81.5,
+   "scoreMs": 0.20000000298023224,
+   "scoreAllMs": 0.7999999970197678
+  },
+  {
+   "N": 2000,
+   "kept": 250,
+   "extractMs": 141.20000000298023,
+   "scoreMs": 0.20000000298023224,
+   "scoreAllMs": 2
+  },
+  {
+   "N": 5000,
+   "kept": 250,
+   "extractMs": 363.5,
+   "scoreMs": 0.20000000298023224,
+   "scoreAllMs": 4.299999997019768
+  }
+ ]
+}

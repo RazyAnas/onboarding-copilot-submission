@@ -1,0 +1,219 @@
+{
+ "archive-org": {
+  "pool": 0,
+  "dups": 0,
+  "cssBlocked": 0,
+  "sheets": 2,
+  "targets": 0
+ },
+ "bootstrap-dashboard": {
+  "pool": 18,
+  "dups": 0,
+  "cssBlocked": 0,
+  "sheets": 3,
+  "targets": 10
+ },
+ "bootstrap-checkout": {
+  "pool": 25,
+  "dups": 0,
+  "cssBlocked": 0,
+  "sheets": 3,
+  "targets": 10
+ },
+ "angular-dev": {
+  "pool": 48,
+  "dups": 2,
+  "cssBlocked": 0,
+  "sheets": 19,
+  "targets": 10
+ },
+ "bootstrap-signin": {
+  "pool": 5,
+  "dups": 0,
+  "cssBlocked": 0,
+  "sheets": 3,
+  "targets": 5
+ },
+ "bootstrap-pricing": {
+  "pool": 23,
+  "dups": 0,
+  "cssBlocked": 0,
+  "sheets": 3,
+  "targets": 10
+ },
+ "adminlte-forms": {
+  "pool": 73,
+  "dups": 23,
+  "cssBlocked": 0,
+  "sheets": 3,
+  "targets": 10
+ },
+ "adminlte": {
+  "pool": 33,
+  "dups": 6,
+  "cssBlocked": 0,
+  "sheets": 5,
+  "targets": 10
+ },
+ "adminlte-tables": {
+  "pool": 44,
+  "dups": 10,
+  "cssBlocked": 0,
+  "sheets": 6,
+  "targets": 10
+ },
+ "demo-dashboard": {
+  "pool": 14,
+  "dups": 0,
+  "cssBlocked": 0,
+  "sheets": 1,
+  "targets": 10
+ },
+ "bootstrap-forms": {
+  "pool": 167,
+  "dups": 39,
+  "cssBlocked": 0,
+  "sheets": 3,
+  "targets": 10
+ },
+ "demo-members": {
+  "pool": 14,
+  "dups": 2,
+  "cssBlocked": 0,
+  "sheets": 1,
+  "targets": 10
+ },
+ "demo-modal": {
+  "pool": 17,
+  "dups": 2,
+  "cssBlocked": 0,
+  "sheets": 1,
+  "targets": 10
+ },
+ "pypi": {
+  "pool": 54,
+  "dups": 7,
+  "cssBlocked": 0,
+  "sheets": 4,
+  "targets": 10
+ },
+ "hackernews": {
+  "pool": 187,
+  "dups": 57,
+  "cssBlocked": 0,
+  "sheets": 1,
+  "targets": 10
+ },
+ "nextjs-docs": {
+  "pool": 108,
+  "dups": 39,
+  "cssBlocked": 0,
+  "sheets": 3,
+  "targets": 10
+ },
+ "python-docs": {
+  "pool": 78,
+  "dups": 47,
+  "cssBlocked": 0,
+  "sheets": 7,
+  "targets": 10
+ },
+ "mdn-button": {
+  "pool": 250,
+  "dups": 38,
+  "cssBlocked": 0,
+  "sheets": 18,
+  "targets": 10
+ },
+ "shadcn-dashboard": {
+  "pool": 118,
+  "dups": 55,
+  "cssBlocked": 0,
+  "sheets": 7,
+  "targets": 10
+ },
+ "svelte-dev": {
+  "pool": 126,
+  "dups": 9,
+  "cssBlocked": 0,
+  "sheets": 7,
+  "targets": 10
+ },
+ "shadcn-tasks": {
+  "pool": 89,
+  "dups": 55,
+  "cssBlocked": 0,
+  "sheets": 6,
+  "targets": 10
+ },
+ "todomvc": {
+  "pool": 12,
+  "dups": 2,
+  "cssBlocked": 0,
+  "sheets": 1,
+  "targets": 10
+ },
+ "react-dev": {
+  "pool": 122,
+  "dups": 60,
+  "cssBlocked": 0,
+  "sheets": 1,
+  "targets": 10
+ },
+ "w3c": {
+  "pool": 47,
+  "dups": 7,
+  "cssBlocked": 0,
+  "sheets": 3,
+  "targets": 10
+ },
+ "vuejs": {
+  "pool": 56,
+  "dups": 42,
+  "cssBlocked": 0,
+  "sheets": 2,
+  "targets": 10
+ },
+ "tailwind-docs": {
+  "pool": 234,
+  "dups": 35,
+  "cssBlocked": 0,
+  "sheets": 2,
+  "targets": 10
+ },
+ "django-docs": {
+  "pool": 226,
+  "dups": 38,
+  "cssBlocked": 0,
+  "sheets": 1,
+  "targets": 10
+ },
+ "bootstrap-navbar": {
+  "pool": 247,
+  "dups": 110,
+  "cssBlocked": 0,
+  "sheets": 3,
+  "targets": 10
+ },
+ "flask-docs": {
+  "pool": 249,
+  "dups": 45,
+  "cssBlocked": 0,
+  "sheets": 4,
+  "targets": 10
+ },
+ "github-playwright": {
+  "pool": 201,
+  "dups": 54,
+  "cssBlocked": 0,
+  "sheets": 33,
+  "targets": 10
+ },
+ "wikipedia-main": {
+  "pool": 229,
+  "dups": 24,
+  "cssBlocked": 0,
+  "sheets": 13,
+  "targets": 10
+ }
+}

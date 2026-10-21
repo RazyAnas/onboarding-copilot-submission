@@ -1,0 +1,10 @@
+transfer-from-synthetic: 86.6% vs sim_only 85.6% vs Similo 90.1% (negative result)
+joint one-to-one assignment (Hungarian) on real Similo data: 92.7% vs independent 91.6% (+1.2 [0.4,2.0]) vs Similo 90.1% (+2.7 [-0.4,6.8], not significant)
+order-preserving DP alignment (bioinformatics): 83.8% vs Similo 90.1% (-6.2 [-11.8,-1.2]) -- hurts
+RANSAC-style global layout-shift rerank (computer vision): 90.4% vs independent 91.7% (-1.3 [-3.4,0.0]) -- no gain
+ensemble(linear+GBDT): 90.9% (no gain); +joint 91.3%; +per-site pseudo-feedback 91.3% (no change); +margin gate: C 87.6% W 3.6% A 8.7% vs Similo W 9.9% (dW -6.4 [-10.5,-3.0], significant), dC -2.5 [-6.7,1.5] n.s.
+FAILURE-DRIVEN SEMANTIC FEATURES (NCD + token Jaccard) + joint assignment on real Similo data: indep 92.7%, joint 93.9% vs Similo 90.1% (+3.9 [0.5,8.1], SIGNIFICANT). 78% of prior errors had changed/missing text.
+MATCHED SITES (37 sites, 548 identical targets): joint 94.0% vs Similo 90.1% (+4.0 [0.4,8.3]); joint+margin C 88.9% W 2.6% A 8.6% (dW -7.5 [-12.5,-4.0]). Split halves: +3.8 and +4.4 (each underpowered); text-changed share of failures 80% and 83%.
+SWEEP (matched 37 sites): fast set-transformer 91.4, listwise MLP 92.0, ens 92.2; combos (temp scaling, dual-softmax, Sinkhorn, stable matching, self-training, linear+GBDT ensembles) all <=94.0 (plateau, equal to joint); adversarial text-masking augmentation <=94.0; FlyHash features 93.6 (-0.4 vs 94.0), FlyHash-only+3 feats 92.2.
+MODERN-TECHNIQUE SWEEP (matched 37 sites, joint): VON-style visual-overlap group evidence 93.2%; sentence embeddings (MiniLM) 93.1%; embeddings+FlyHash 93.1%. All <= 94.0%.
+NOT RUNNABLE: HybridSimilo/LLM VON Similo (2025 Kluge&Stocco 10,376-pair benchmark not released in repo); ReproBreak (1GB DB + Docker, different task).

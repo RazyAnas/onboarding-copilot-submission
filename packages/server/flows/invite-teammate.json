@@ -1,0 +1,35 @@
+{
+  "key": "invite-teammate",
+  "name": "Invite a teammate",
+  "version": 1,
+  "steps": [
+    {
+      "id": "open-settings",
+      "goal": "Navigate to the team settings area where members are managed",
+      "instruction": "Open Settings to manage your team.",
+      "match": { "role": "link", "name": { "equals": "Settings" } },
+      "advanceOn": { "type": "url", "contains": "/settings" }
+    },
+    {
+      "id": "click-invite",
+      "goal": "Open the invite dialog from the Members section (not the top-nav duplicate)",
+      "instruction": "Click Invite in the Members section.",
+      "match": {
+        "role": "button",
+        "name": { "equals": "Invite" },
+        "sectionHint": "Members"
+      },
+      "advanceOn": { "type": "elementVisible", "match": { "testId": "send-invite" } }
+    },
+    {
+      "id": "send-invite",
+      "goal": "Enter the teammate's email, then send the invitation",
+      "instruction": "Now click Send invite to send the invitation.",
+      "match": { "testId": "send-invite" },
+      "activateWhen": { "type": "inputFilled", "match": { "testId": "invite-email" } },
+      "waitingInstruction": "Enter your teammate's email address to continue.",
+      "waitingMatch": { "testId": "invite-email" },
+      "advanceOn": { "type": "elementGone", "match": { "testId": "send-invite" } }
+    }
+  ]
+}

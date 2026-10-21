@@ -1,0 +1,269 @@
+{
+ "log": [
+  {
+   "step": "start",
+   "calls": [
+    "POST /v1/sessions"
+   ]
+  },
+  {
+   "step": "open-settings",
+   "calls": [
+    "POST /v1/sessions/s_1a0ab461-459a-4c0e-be28-bd5fd3769d4c/checkpoint"
+   ],
+   "ms": 758
+  },
+  {
+   "step": "click-invite",
+   "calls": [
+    "POST /v1/sessions/s_1a0ab461-459a-4c0e-be28-bd5fd3769d4c/checkpoint"
+   ],
+   "ms": 760
+  },
+  {
+   "step": "fill-email",
+   "calls": [],
+   "ms": 717
+  },
+  {
+   "step": "send-invite",
+   "calls": [
+    "POST /v1/sessions/s_1a0ab461-459a-4c0e-be28-bd5fd3769d4c/checkpoint",
+    "GET /v1/onboarding",
+    "GET /v1/onboarding",
+    "GET /v1/onboarding",
+    "GET /v1/onboarding",
+    "GET /v1/onboarding"
+   ],
+   "ms": 744
+  }
+ ],
+ "byPath": {
+  "GET /v1/onboarding": 18,
+  "POST /v1/sessions": 1,
+  "POST /v1/sessions/:id/checkpoint": 3
+ },
+ "total": 22,
+ "reqs": [
+  {
+   "t": 1792080657419,
+   "method": "GET",
+   "path": "/v1/onboarding",
+   "bytes": 0,
+   "url": "http://localhost:8787/v1/onboarding?apiKey=demo-key",
+   "done": true,
+   "ms": 4,
+   "status": 200
+  },
+  {
+   "t": 1792080657420,
+   "method": "GET",
+   "path": "/v1/onboarding",
+   "bytes": 0,
+   "url": "http://localhost:8787/v1/onboarding?apiKey=demo-key",
+   "done": true,
+   "ms": 4,
+   "status": 200
+  },
+  {
+   "t": 1792080658969,
+   "method": "POST",
+   "path": "/v1/sessions",
+   "bytes": 5174,
+   "url": "http://localhost:8787/v1/sessions",
+   "done": true,
+   "ms": 5,
+   "status": 200
+  },
+  {
+   "t": 1792080660271,
+   "method": "POST",
+   "path": "/v1/sessions/s_1a0ab461-459a-4c0e-be28-bd5fd3769d4c/checkpoint",
+   "bytes": 532,
+   "url": "http://localhost:8787/v1/sessions/s_1a0ab461-459a-4c0e-be28-bd5fd3769d4c/checkpoint",
+   "done": true,
+   "ms": 3,
+   "status": 200
+  },
+  {
+   "t": 1792080661101,
+   "method": "POST",
+   "path": "/v1/sessions/s_1a0ab461-459a-4c0e-be28-bd5fd3769d4c/checkpoint",
+   "bytes": 246,
+   "url": "http://localhost:8787/v1/sessions/s_1a0ab461-459a-4c0e-be28-bd5fd3769d4c/checkpoint",
+   "done": true,
+   "ms": 4,
+   "status": 200
+  },
+  {
+   "t": 1792080662563,
+   "method": "POST",
+   "path": "/v1/sessions/s_1a0ab461-459a-4c0e-be28-bd5fd3769d4c/checkpoint",
+   "bytes": 242,
+   "url": "http://localhost:8787/v1/sessions/s_1a0ab461-459a-4c0e-be28-bd5fd3769d4c/checkpoint",
+   "done": true,
+   "ms": 4,
+   "status": 200
+  },
+  {
+   "t": 1792080662564,
+   "method": "GET",
+   "path": "/v1/onboarding",
+   "bytes": 0,
+   "url": "http://localhost:8787/v1/onboarding?apiKey=demo-key",
+   "done": true,
+   "ms": 5,
+   "status": 200
+  },
+  {
+   "t": 1792080662694,
+   "method": "GET",
+   "path": "/v1/onboarding",
+   "bytes": 0,
+   "url": "http://localhost:8787/v1/onboarding?apiKey=demo-key",
+   "done": true,
+   "ms": 3,
+   "status": 200
+  },
+  {
+   "t": 1792080662822,
+   "method": "GET",
+   "path": "/v1/onboarding",
+   "bytes": 0,
+   "url": "http://localhost:8787/v1/onboarding?apiKey=demo-key",
+   "done": true,
+   "ms": 3,
+   "status": 200
+  },
+  {
+   "t": 1792080662952,
+   "method": "GET",
+   "path": "/v1/onboarding",
+   "bytes": 0,
+   "url": "http://localhost:8787/v1/onboarding?apiKey=demo-key",
+   "done": true,
+   "ms": 4,
+   "status": 200
+  },
+  {
+   "t": 1792080663083,
+   "method": "GET",
+   "path": "/v1/onboarding",
+   "bytes": 0,
+   "url": "http://localhost:8787/v1/onboarding?apiKey=demo-key",
+   "done": true,
+   "ms": 5,
+   "status": 200
+  },
+  {
+   "t": 1792080663215,
+   "method": "GET",
+   "path": "/v1/onboarding",
+   "bytes": 0,
+   "url": "http://localhost:8787/v1/onboarding?apiKey=demo-key",
+   "done": true,
+   "ms": 5,
+   "status": 200
+  },
+  {
+   "t": 1792080663347,
+   "method": "GET",
+   "path": "/v1/onboarding",
+   "bytes": 0,
+   "url": "http://localhost:8787/v1/onboarding?apiKey=demo-key",
+   "done": true,
+   "ms": 6,
+   "status": 200
+  },
+  {
+   "t": 1792080663478,
+   "method": "GET",
+   "path": "/v1/onboarding",
+   "bytes": 0,
+   "url": "http://localhost:8787/v1/onboarding?apiKey=demo-key",
+   "done": true,
+   "ms": 4,
+   "status": 200
+  },
+  {
+   "t": 1792080663607,
+   "method": "GET",
+   "path": "/v1/onboarding",
+   "bytes": 0,
+   "url": "http://localhost:8787/v1/onboarding?apiKey=demo-key",
+   "done": true,
+   "ms": 3,
+   "status": 200
+  },
+  {
+   "t": 1792080663736,
+   "method": "GET",
+   "path": "/v1/onboarding",
+   "bytes": 0,
+   "url": "http://localhost:8787/v1/onboarding?apiKey=demo-key",
+   "done": true,
+   "ms": 3,
+   "status": 200
+  },
+  {
+   "t": 1792080663867,
+   "method": "GET",
+   "path": "/v1/onboarding",
+   "bytes": 0,
+   "url": "http://localhost:8787/v1/onboarding?apiKey=demo-key",
+   "done": true,
+   "ms": 5,
+   "status": 200
+  },
+  {
+   "t": 1792080663998,
+   "method": "GET",
+   "path": "/v1/onboarding",
+   "bytes": 0,
+   "url": "http://localhost:8787/v1/onboarding?apiKey=demo-key",
+   "done": true,
+   "ms": 5,
+   "status": 200
+  },
+  {
+   "t": 1792080664128,
+   "method": "GET",
+   "path": "/v1/onboarding",
+   "bytes": 0,
+   "url": "http://localhost:8787/v1/onboarding?apiKey=demo-key",
+   "done": true,
+   "ms": 9,
+   "status": 200
+  },
+  {
+   "t": 1792080664261,
+   "method": "GET",
+   "path": "/v1/onboarding",
+   "bytes": 0,
+   "url": "http://localhost:8787/v1/onboarding?apiKey=demo-key",
+   "done": true,
+   "ms": 7,
+   "status": 200
+  },
+  {
+   "t": 1792080664394,
+   "method": "GET",
+   "path": "/v1/onboarding",
+   "bytes": 0,
+   "url": "http://localhost:8787/v1/onboarding?apiKey=demo-key",
+   "done": true,
+   "ms": 5,
+   "status": 200
+  },
+  {
+   "t": 1792080664523,
+   "method": "GET",
+   "path": "/v1/onboarding",
+   "bytes": 0,
+   "url": "http://localhost:8787/v1/onboarding?apiKey=demo-key",
+   "done": true,
+   "ms": 2,
+   "status": 200
+  }
+ ]
+}

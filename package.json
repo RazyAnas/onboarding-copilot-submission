@@ -1,0 +1,24 @@
+{
+  "name": "projectonboard",
+  "version": "0.1.0",
+  "private": true,
+  "description": "AI Context-Aware Product Copilot — embeddable SaaS onboarding copilot",
+  "type": "module",
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "typecheck": "pnpm -r run --if-present typecheck",
+    "test": "pnpm -r run --if-present test",
+    "build": "pnpm -r run --if-present build",
+    "dev": "pnpm -r --parallel run --if-present dev"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.8"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["better-sqlite3", "esbuild"]
+  }
+}

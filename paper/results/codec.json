@@ -1,0 +1,156 @@
+[
+ {
+  "page": "adminlte",
+  "n": 152,
+  "groups": 11,
+  "grouped": 140,
+  "raw": 216287,
+  "delta": 52009,
+  "gzRaw": 7251,
+  "gzDelta": 5803,
+  "lossless": true
+ },
+ {
+  "page": "bootstrap-dashboard",
+  "n": 25,
+  "groups": 2,
+  "grouped": 14,
+  "raw": 15789,
+  "delta": 11720,
+  "gzRaw": 1727,
+  "gzDelta": 1769,
+  "lossless": true
+ },
+ {
+  "page": "bootstrap-forms",
+  "n": 201,
+  "groups": 9,
+  "grouped": 161,
+  "raw": 362234,
+  "delta": 227948,
+  "gzRaw": 16666,
+  "gzDelta": 13452,
+  "lossless": true
+ },
+ {
+  "page": "demo-dashboard",
+  "n": 14,
+  "groups": 1,
+  "grouped": 9,
+  "raw": 7379,
+  "delta": 4953,
+  "gzRaw": 1081,
+  "gzDelta": 1120,
+  "lossless": true
+ },
+ {
+  "page": "demo-members",
+  "n": 14,
+  "groups": 1,
+  "grouped": 9,
+  "raw": 7334,
+  "delta": 4908,
+  "gzRaw": 1063,
+  "gzDelta": 1099,
+  "lossless": true
+ },
+ {
+  "page": "demo-modal",
+  "n": 17,
+  "groups": 1,
+  "grouped": 9,
+  "raw": 8944,
+  "delta": 6518,
+  "gzRaw": 1291,
+  "gzDelta": 1332,
+  "lossless": true
+ },
+ {
+  "page": "github-playwright",
+  "n": 250,
+  "groups": 14,
+  "grouped": 121,
+  "raw": 2684797,
+  "delta": 1532109,
+  "gzRaw": 39972,
+  "gzDelta": 31380,
+  "lossless": true
+ },
+ {
+  "page": "hackernews",
+  "n": 231,
+  "groups": 4,
+  "grouped": 136,
+  "raw": 121019,
+  "delta": 80033,
+  "gzRaw": 10007,
+  "gzDelta": 9297,
+  "lossless": true
+ },
+ {
+  "page": "mdn-button",
+  "n": 250,
+  "groups": 10,
+  "grouped": 212,
+  "raw": 640362,
+  "delta": 144244,
+  "gzRaw": 22407,
+  "gzDelta": 24982,
+  "lossless": true
+ },
+ {
+  "page": "python-docs",
+  "n": 113,
+  "groups": 5,
+  "grouped": 87,
+  "raw": 107505,
+  "delta": 38614,
+  "gzRaw": 6469,
+  "gzDelta": 5174,
+  "lossless": true
+ },
+ {
+  "page": "react-dev",
+  "n": 135,
+  "groups": 12,
+  "grouped": 105,
+  "raw": 820882,
+  "delta": 244673,
+  "gzRaw": 15800,
+  "gzDelta": 11369,
+  "lossless": true
+ },
+ {
+  "page": "shadcn-dashboard",
+  "n": 130,
+  "groups": 16,
+  "grouped": 105,
+  "raw": 295593,
+  "delta": 105536,
+  "gzRaw": 9003,
+  "gzDelta": 7657,
+  "lossless": true
+ },
+ {
+  "page": "todomvc",
+  "n": 12,
+  "groups": 2,
+  "grouped": 8,
+  "raw": 9232,
+  "delta": 5123,
+  "gzRaw": 1353,
+  "gzDelta": 1397,
+  "lossless": true
+ },
+ {
+  "page": "wikipedia-main",
+  "n": 250,
+  "groups": 19,
+  "grouped": 178,
+  "raw": 2676268,
+  "delta": 751410,
+  "gzRaw": 39831,
+  "gzDelta": 32204,
+  "lossless": true
+ }
+]

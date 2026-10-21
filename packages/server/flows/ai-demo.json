@@ -1,0 +1,15 @@
+{
+  "key": "ai-demo",
+  "name": "AI disambiguation demo",
+  "version": 1,
+  "steps": [
+    {
+      "id": "pick-invite",
+      "goal": "Open the invite dialog from the Members section, not the top navigation",
+      "instruction": "Click the Invite button in the Members section.",
+      "match": { "role": "button", "name": { "equals": "Invite" } },
+      "aiAssist": true,
+      "advanceOn": { "type": "elementVisible", "match": { "testId": "send-invite" } }
+    }
+  ]
+}
