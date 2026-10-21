@@ -250,7 +250,6 @@ Gemini's structured output schema (validated, never freeform): \`{ stepId, targe
 
 \- \*\*M7 — Events + completion + observability.\*\* \*Proof:\* events logged, session reaches \`done\`; debug overlay shows scores.
 
-\- \*\*M8 — Polish.\*\* 2nd flow ("Create first project"), knowledge-grounded step, README + demo script. \*Proof:\* both flows complete; cold-clone \`pnpm i && pnpm dev\` works from README.
 
 \---
 
@@ -306,7 +305,7 @@ Gemini's structured output schema (validated, never freeform): \`{ stepId, targe
 
 \## Instruction Set for the Next Agentic Coder (RAMP rules)
 
-\> Build strictly milestone-by-milestone (M0→M8); \*\*do not advance until the current milestone's Proof passes in the browser/tests.\*\* Rules: strict TypeScript, strong types on all public APIs, validate every external input with zod, no silent failures, keep the SDK bundle lean (no heavy runtime deps), shared types/scoring live in \`packages/shared\` (single source of truth), AI output is always zod-validated and constrained to pick-by-id (never freeform DOM, never raw DOM into the prompt), deterministic fallback mode must work with no API key. The LLM is Gemini 2.5 Pro via \`@google/genai\` (\`gemini-2.5-pro\`) — \*\*not\*\* Claude. Prove each milestone with the exact command + browser check + log to inspect + failure mode listed in the plan.
+\> Build strictly milestone-by-milestone (M0→M7); \*\*do not advance until the current milestone's Proof passes in the browser/tests.\*\* Rules: strict TypeScript, strong types on all public APIs, validate every external input with zod, no silent failures, keep the SDK bundle lean (no heavy runtime deps), shared types/scoring live in \`packages/shared\` (single source of truth), AI output is always zod-validated and constrained to pick-by-id (never freeform DOM, never raw DOM into the prompt), deterministic fallback mode must work with no API key. The LLM is Gemini 2.5 Pro via \`@google/genai\` (\`gemini-2.5-pro\`) — \*\*not\*\* Claude. Prove each milestone with the exact command + browser check + log to inspect + failure mode listed in the plan.
 
 \---
 

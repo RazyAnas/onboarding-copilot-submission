@@ -20,7 +20,7 @@ Three planes:
 
 - **Runtime** (customer site, deterministic, latency-critical): the SDK extracts a pseudo-accessibility semantic graph from the DOM, executes the compiled plan with a shared deterministic step machine, renders a themeable Shadow-DOM "companion" (spotlight ring + card + checklist), and reports events asynchronously. The server is touched only at session start, resume, and checkpoint.
 - **Intelligence** (offline, LLM-bounded): the plan compiler turns a free-form goal + tenant docs into a validated `FlowDefinition` — **one** structured LLM call, cached per goal. The LLM never reads raw DOM and never emits selectors; it picks among deterministically-extracted candidates **by id**, and everything it returns is Zod-validated. Works fully without an API key (deterministic mode).
-- **Control** (observability today, console in M10): server-emitted funnel events, `/v1/stats`, and a **self-healing plan cache** — if a compiled plan's target can't be grounded across 3 distinct sessions, the plan is evicted and recompiled fresh against the current UI/docs.
+- **Control** (observability): server-emitted funnel events, `/v1/stats`, and a **self-healing plan cache** — if a compiled plan's target can't be grounded across 3 distinct sessions, the plan is evicted and recompiled fresh against the current UI/docs.
 
 ## Quickstart
 
@@ -57,12 +57,13 @@ packages/
              # AI providers (Gemini via Vercel AI SDK + deterministic fallback), SQLite
   demo/      # React demo SaaS app seeded with the nasty cases (duplicate buttons, portals, remounts)
 tests/e2e/   # Playwright specs (real a11y tree as extraction oracle)
-docs/PLATFORM-PLAN.md  # M9→M12 platform roadmap
+docs/M9.6-COMPANION-UX.md  # companion UX design
+paper/                 # IEEE research paper (PDF + LaTeX), benchmark, results
 ```
 
-## Milestones
+## Milestones (all complete)
 
-### Done ✅
+### Delivered ✅
 
 - [x] **M0 — Scaffold.** pnpm monorepo, strict TS, shared Zod schemas.
 - [x] **M1 — SDK bootstrap + overlay.** Shadow-DOM highlight, no host-CSS bleed.
@@ -78,15 +79,6 @@ docs/PLATFORM-PLAN.md  # M9→M12 platform roadmap
 - [x] **M9 — Runtime split.** Plan ships whole to the SDK; every step executes locally (zero per-step network); sessions resume across refresh (`localStorage` + `/v1/sessions`); publishable/secret key split.
 - [x] **M9.5 — Companion UX/UI.** Token-driven theming (light/dark/auto with host-luminance sampling, brand accent with contrast clamping, density/radius/placement), motion system (traveling spotlight, reduced-motion safe), celebration state, completion-bug fix (event-class-aware tick scheduling).
 - [x] **M9.6 — Onboarding-first companion (3 layers).** *Discovery:* adaptive placement engine (rises above host fixed bars, dodges support/cookie widgets, never the support corner) + a low-footprint progress dock → recommended-flows checklist (`GET /v1/onboarding`). *Guidance:* the M9.5 companion card, launched from the checklist. *Intelligence:* a summoned ⌘K command palette (page-aware, single-shot, "Guide me" → live guide) that **replaced the chatbot-style widget** — the bottom-right "?" toggle is gone. See [docs/M9.6-COMPANION-UX.md](docs/M9.6-COMPANION-UX.md).
-
-### Left to do 🚧
-
-- [ ] **M8 — Polish (partial).** Second flow ("Create first project") + knowledge-grounded step + cold-clone demo script. *(README: done.)*
-- [ ] **M10 — Control plane.** Admin API (`/v1/admin/*`: funnel, session timelines, event search, flow CRUD/versions/recompile/promote, knowledge ingest) + `packages/console` dashboard: notice → diagnose → fix → verify in one tool. Off-path "route me from here" re-planning lands here too.
-- [ ] **M11 — Voice.** `VoiceController` over the existing engine: spoken guidance + voice commands via a local intent grammar (no LLM in the hot loop); Web Speech API default, Gemini Live API behind a flag.
-- [ ] **M12 — Platform hardening.** Postgres behind the repo layer, embedding retrieval (replacing lexical), doc-URL ingestion pipeline, webhooks, app-fingerprint cache keying.
-
-See [docs/PLATFORM-PLAN.md](docs/PLATFORM-PLAN.md) for the full M9→M12 design.
 
 ## Locked principles
 

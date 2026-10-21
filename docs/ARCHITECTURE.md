@@ -33,7 +33,7 @@ RUNTIME (customer site — deterministic, instant)
 INTELLIGENCE (offline — LLM-bounded, amortized)
   goal → retrieval → plan cache → or ONE authorFlow call (doc-grounded) → cached FlowDefinition
 
-CONTROL (observability — console app lands in M10)
+CONTROL (observability)
   server-emitted funnel events → /v1/stats → self-healing plan cache
 ```
 
@@ -54,7 +54,7 @@ pnpm workspaces, strict TypeScript, ESM everywhere.
 **Libraries and why:**
 
 - **Zod** — every external input (HTTP bodies, LLM outputs, theme configs) is schema-validated; types are *inferred from* schemas so runtime validation and compile-time types can't drift.
-- **Fastify + better-sqlite3** — schema-first HTTP and synchronous, zero-ops persistence for the vertical slice. The repo layer ([`server/src/db/repos.ts`](../packages/server/src/db/repos.ts)) is the seam where Postgres slots in (M12).
+- **Fastify + better-sqlite3** — schema-first HTTP and synchronous, zero-ops persistence for the vertical slice. The repo layer ([`server/src/db/repos.ts`](../packages/server/src/db/repos.ts)) is the seam where Postgres can slot in.
 - **Vercel AI SDK (`ai` + `@ai-sdk/google`)** — gives us `generateObject` (Zod-validated structured LLM output) and retries/backoff for free, and makes the model vendor swappable in one file. Model: **Gemini 2.5 Flash** (env-configured).
 - **Vite** — demo dev server + SDK library build (IIFE script-tag embed). The SDK ships **zero runtime dependencies** beyond tree-shaken `shared` code: no UI framework, no animation library — Shadow DOM + CSS only.
 - **Vitest / Playwright** — unit and e2e. Playwright's *real* accessibility tree is used as a test-time **oracle** to validate our pseudo-a11y extraction (something an embedded SDK can't access at runtime).
@@ -131,7 +131,7 @@ DOM → extract.ts → SemanticElement[] → shared/executor planNext(plan, stat
 | `src/routes/events.ts` | `POST /v1/events` — SDK/integrator events; tenant-validated, foreign sessions dropped not errored |
 | `src/routes/stats.ts` | `GET /v1/stats?apiKey=<SECRET>` — the funnel: per-flow sessions/completions/completion-rate/stuck-by-step/target-lost + AI compile health. Publishable keys are rejected. |
 | `src/telemetry.ts` | `recordEvent` + `recordTargetLost` — dedup per session+step, and the **self-healing cache**: `target_lost` from ≥3 distinct sessions on an `ai:*` flow evicts it (next equivalent goal recompiles against the current UI/docs) |
-| `src/knowledge.ts` | naive keyword retrieval over tenant doc chunks (top-3) — the embedding-retrieval seam for M12 |
+| `src/knowledge.ts` | naive keyword retrieval over tenant doc chunks (top-3) — the seam where embedding retrieval would plug in |
 | `src/planner.ts` | re-exports the shared executor + `planGuidance`: AI disambiguation wrapper (only when a step opts in via `aiAssist` AND the deterministic match is ambiguous) |
 | `src/ai/provider.ts` | **the vendor seam** — `AiProvider`: `decide` (pick element by id), `chat`, `authorFlow` (compile a full guide), `guide` (one reactive step; JIT fallback) |
 | `src/ai/gemini.ts` | Gemini implementation via Vercel AI SDK; `generateObject` + Zod = no freeform output, automatic retries |
@@ -201,4 +201,3 @@ The demo is a deliberately hostile React workspace app: **duplicate Invite butto
 - **"Where do analytics come from?"** → `server/src/telemetry.ts` + `routes/stats.ts`
 - **"Where does self-healing happen?"** → `server/src/telemetry.ts` (`recordTargetLost`)
 - **"What runs when the page loads?"** → `sdk/src/bootstrap.ts` (`Copilot.init`)
-- **"What's planned next?"** → [`PLATFORM-PLAN.md`](PLATFORM-PLAN.md) (M10 console, M11 voice, M12 hardening)

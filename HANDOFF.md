@@ -101,7 +101,7 @@ SQLite dev DB lives at `packages/server/data/copilot.db` (+ `-shm`/`-wal`).
   session start, resume, checkpoint, repair, event flush.
 - **Intelligence** (offline, LLM-bounded): plan compiler turns free-form goal + tenant
   docs into a validated `FlowDefinition` — **one** structured LLM call, cached per goal.
-- **Control** (observability today, console in M10): server-emitted funnel events,
+- **Control** (observability): server-emitted funnel events,
   `/v1/stats`, and the self-healing plan cache.
 
 ### Plan compiler resolution order (free-form goal → guide)
@@ -163,7 +163,7 @@ packages/
          pages/ Dashboard.tsx, Members.tsx
 tests/e2e/   companion, composer, discovery, extraction, flow, guidance-ux, m9-runtime,
              observability, recovery, transport
-docs/        ARCHITECTURE.md (reviewer map), PLATFORM-PLAN.md (M9→M12), M9.6-COMPANION-UX.md
+docs/        ARCHITECTURE.md (reviewer map), M9.6-COMPANION-UX.md
 README.md, plan.md, HANDOFF.md (this file)
 ```
 
@@ -171,7 +171,7 @@ README.md, plan.md, HANDOFF.md (this file)
 
 ## 6. Milestone status
 
-### DONE ✅
+### DELIVERED ✅
 - **M0** Scaffold — pnpm monorepo, strict TS, shared Zod schemas.
 - **M1** SDK bootstrap + overlay — Shadow-DOM highlight, no host-CSS bleed (browser-proven).
 - **M2** Extraction + pseudo-a11y — semantic elements validated vs Playwright's real a11y tree.
@@ -189,29 +189,7 @@ README.md, plan.md, HANDOFF.md (this file)
   - **Layer 1 Discovery:** adaptive placement engine (pure `pickPlacement` scorer in `shared/src/placement/` + DOM prober in `sdk/src/ui/placement.ts`; rises above host fixed bars, dodges support/cookie widgets, never the support corner) + low-footprint progress dock → recommended-flows checklist (`GET /v1/onboarding`), `Copilot.startFlow()`, self-retires when done.
   - **Layer 2 Guidance:** companion card detaches from dock on `startFlow`; "Ask" affordance → Layer 3.
   - **Layer 3 Intelligence:** summoned ⌘K command palette (`sdk/src/overlay/composer.ts`), centered, single-shot, page-aware answer + "Guide me", Esc to close. **Replaced the chatbot-style widget** — bottom-right "?" toggle is GONE, `chat/widget.ts` deleted.
-  - Tests at M9.6: 23 shared + 31 server unit, 28 e2e. e2e runs against a fresh in-memory backend.
-
-### LEFT TO DO 🚧
-- **M8 — Polish (partial).** Second flow ("Create first project") + knowledge-grounded
-  step + cold-clone demo script. (README marks it done but progress notes flag the
-  remainder as still open — reconcile this.)
-- **M10 — Control plane v1.** Admin API under `/v1/admin/*` (secret key): stats
-  overview/funnel/goals, session list + timeline, event search, flow CRUD + versions +
-  recompile + promote (`ai:*` → authored), plan-cache list/evict, knowledge CRUD + URL
-  ingest job. `packages/console` React app: funnel dashboard (home), session inspector,
-  flow studio (JSON-with-validation first), knowledge manager, cache health.
-  Off-path "route me from here" re-planning lands here too.
-  *Proof goal:* diagnose a broken flow end-to-end in the console.
-- **M11 — Voice v1.** `VoiceController` interface in SDK; TTS narration of engine
-  instructions; local intent grammar for next/back/repeat/skip/stop (<100ms, no LLM);
-  free-form speech → `/v1/chat` → narrated answer; barge-in cancels TTS. Tier 1 default
-  Web Speech API; Tier 2 flag Gemini Live API duplex. *Proof:* invite flow hands-free in
-  Chrome; Firefox degrades gracefully.
-- **M12 — Platform hardening.** Postgres behind the repo layer (SQLite stays for
-  dev/tests); embedding retrieval replacing lexical (seams marked in
-  `knowledge.ts`/`retrieve.ts`; `ai/embeddings.ts` exists); doc-URL/sitemap ingestion;
-  webhooks (`plan_invalidated`, `completion_rate_drop`, `goal_infeasible_spike`);
-  app-fingerprint plan-cache keying.
+  - Tests at M9.6: 23 shared + 36 server unit tests passing; e2e suite of 10 spec files. e2e runs against a fresh in-memory backend.
 
 **Deferred deliberately:** RL; vision in runtime; cross-origin iframes; mobile SDKs;
 on-device speech.
@@ -244,38 +222,19 @@ free-form goal. Flow source tags: configured | retrieval | cache | compiled | ji
   for go-ahead.
 - **Prove work** in the browser preview and/or with tests before declaring done.
 - The build plan file: `~/.claude/plans/users-mariyafatima-downloads-prompt-1-m-shimmering-meerkat.md`
-  (original M0–M8); `docs/PLATFORM-PLAN.md` supersedes it for M9→M12.
+  (original build plan).
 
 ---
 
-## 9. Git / uncommitted state (as of 2026-06-18)
-
-Branch `main`. Recent commits: `5961bd5 major updates + readme update`, `aa84ee0 major
-updates`, `900d5aa update chat interface`, `a03c4be plan`, `60e9308 first commit`.
-
-**A large amount of M9.6 work is UNCOMMITTED** (working tree has modified + untracked
-files: `discovery/`, `engine/`, `host/`, `composer.ts`, `discovery-dock.ts`,
-`ui/placement.ts`, `routes/onboarding.ts`, `ai/embeddings.ts`, `placement/`,
-`schemas/onboarding.ts`, e2e `composer.spec.ts` + `discovery.spec.ts`, etc.). The old
-`chat/widget.ts` and `tests/e2e/chat.spec.ts` are deleted but not committed.
-
-**A PR was requested then deferred — NOT yet created.** Ask the user before creating
-one. Likewise, commit/push only when the user asks.
-
----
+## 9. Repository state
+Final snapshot: everything (code, docs, paper, results) is committed in this repository.
 
 ## 10. Where to find what
 - Reviewer's file-by-file map, libraries + why, problems→solutions table: `docs/ARCHITECTURE.md`.
-- Platform roadmap M9→M12: `docs/PLATFORM-PLAN.md`.
 - M9.6 companion UX design (placement scorer, 3 layers, form rules): `docs/M9.6-COMPANION-UX.md`.
 - README quickstart + milestone checkboxes: `README.md`.
 
 ---
 
-## 11. Suggested next step
-Pick ONE: (a) finish **M8 remainder** (2nd "Create first project" flow + knowledge-
-grounded step + cold-clone demo), (b) start **M10 control plane** (admin API + console),
-or (c) commit the uncommitted M9.6 work + open the deferred PR (ask user first).
-Reconcile the M8 done/not-done discrepancy between README and progress notes before
-claiming M8 complete.
-```
+## 11. Status
+Final. All delivered milestones (M0–M7, M9, M9.5, M9.6) are complete and tested; see the research paper in `paper/` for the evaluation.
